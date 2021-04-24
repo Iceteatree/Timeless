@@ -78,5 +78,17 @@ The people who would use this application are people who enjoy shopping and in p
 - A point system that allows the user to exchange for coupons and the like.(To be implemented in the future...possibly...maybe.)
 
 
+### How to use
+
+### Installation instructions
+
+### Security measures
+
+### Third part APIS?
+
+### Where and how the application has been deployed
+
+### Link to App
+
 
 ##### Alan Kow | Copyright 2021 |
