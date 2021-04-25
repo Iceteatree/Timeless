@@ -6,6 +6,9 @@ node_modules/
 /.pnp
 .pnp.js
 
+#Config files
+/config
+
 # testing
 /coverage
 
