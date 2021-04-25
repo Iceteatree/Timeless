@@ -1,0 +1,10 @@
+.landing-class {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.landing-class h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: 5rem;
+}
