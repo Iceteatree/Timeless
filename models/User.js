@@ -17,7 +17,7 @@ const UserSchema = new Schema ({
     password: {
         type: String.apply,
         required: [true, 'Please enter a valid password'],
-        minglength: [6, 'Minimum password length should be 6 characters']
+        minlength: [6, 'Minimum password length should be 6 characters']
     },
     register_date: {
         type: Date,
