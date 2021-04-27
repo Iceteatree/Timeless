@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix timeless-app-frontend && npm run build --prefix timeless-app-frontend"
   },
   "author": "Alan Kow",
   "license": "ISC",
@@ -23,5 +24,9 @@
   },
   "devDependencies": {
     "mocha": "^8.3.2"
+  },
+  "engines": {
+    "node": "15.14.0",
+    "npm": "7.11.1"
   }
 }
