@@ -4,13 +4,10 @@
   "description": "A product page that advertises and sells watches. Built using MERN stack.",
   "main": "server.js",
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
-    },
+    "test": "mocha",
+    "start": "nodemon server.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix timeless-app-frontend && npm run build --prefix timeless-app-frontend"
+  },
   "author": "Alan Kow",
   "license": "ISC",
   "dependencies": {
