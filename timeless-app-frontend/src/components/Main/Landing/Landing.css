@@ -12,3 +12,11 @@
     font-weight: 900;
     font-size:8vmax;
 }
+
+.sub-heading-landing {
+    opacity: 1;
+    padding: 1rem;
+    background: rgba(192, 192, 192, 0.5);
+    padding-left: 15vw;
+    font-size: 6vmax;
+}

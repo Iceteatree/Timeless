@@ -21,7 +21,7 @@ module.exports.get_cart_items = async (req, res) => {
 }
 
 // This function handles adding items to our cart.
-module.exports.add_car_item = async (req, res) => {
+module.exports.add_cart_item = async (req, res) => {
     // Recieve the user id from the params and assign it to userId. Deconstruct the productId and quantity from the request body.
     const userId = req.params.id;
     const { productId, quantity } = req.body;

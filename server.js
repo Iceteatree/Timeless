@@ -8,6 +8,11 @@ let app = express();
 // const uri = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB_CLUSTER}/timelessDatabase`
 const dbURI = config.get('dbURI'); //This does the same as above but with less process.env
 
+const authRoutes = require('./routes/auth');
+const itemRoutes = require('./routes/item');
+const cartRoutes = require('./routes/cart');
+const orderRoutes = require('./routes/order');
+
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
@@ -18,16 +23,18 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.get('/', (req, res) => {
-    res.send("Server is working.")
-})
+app.use('/api',authRoutes);
+app.use('/api',itemRoutes);
+app.use('/api',cartRoutes);
+app.use('/api',orderRoutes);
 
 // Initialising Mongoose. 
 mongoose.Promise = global.Promise;
 // Connecting to the database
 mongoose.connect(dbURI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 })
 // Error messages
 mongoose.connection.on('error', function(err) {

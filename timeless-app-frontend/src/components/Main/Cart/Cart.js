@@ -40,7 +40,8 @@ class Cart extends Component {
             this.getCartItems(user._id);
         }
         return(
-            <div>
+            <div className="checkout-container">
+                <h1> Checkout </h1>
                 {this.props.isAuthenticated ?
                     <>
                         {this.props.cart.cart ? null :

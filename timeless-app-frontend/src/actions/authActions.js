@@ -69,6 +69,7 @@ export const login = ({email, password}) => dispatch => {
             type: LOGIN_SUCCESS,
             payload: res.data
         }))
+        .then(alert("You have been logged in"))
         .catch(err => {
             dispatch(returnErrors(err.response.data, err.response.status, 'LOGIN_FAIL'));
             dispatch({
@@ -78,6 +79,7 @@ export const login = ({email, password}) => dispatch => {
 }
 // logout user function just sets the type to Logout_success
 export const logout = () => {
+    alert("You have been logged out");
     return {
         type: LOGOUT_SUCCESS
     }

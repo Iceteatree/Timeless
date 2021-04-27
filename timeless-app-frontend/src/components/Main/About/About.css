@@ -1,4 +1,31 @@
 .about-class {
-    padding-top: 8rem;
+    padding-top: 7rem;
+    padding-bottom: 6rem;
     text-align: center;
+    width:70%;
+}
+
+.about-class h1 {
+    font-size: 4.5rem;;
+    margin-bottom: 1.2rem;
+}
+
+.about-text {
+    margin: auto auto;
+    justify-content:center;
+    align-items: center;
+    font-size:1.2rem;
+}
+
+.about-img-div{
+}
+
+.about-img {
+    padding: 0;
+    margin: 0;
+    /* display: flex; */
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+
 }
