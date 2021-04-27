@@ -1,3 +1,27 @@
 .review-class {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
     text-align: center;
+    background-color: #dfd3d3;
+    margin: 0 auto;
 }
+
+.review-class h1 {
+    font-size: 4.5rem;
+}
+
+.testimonial-text {
+    margin:0 auto;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    width: 95vw;
+}
+
+.testimonial-image {
+  width: 20rem;
+  border-radius: 100%;
+  margin: 20px;
+  display: inline;
+}
+

@@ -43,6 +43,7 @@ export default function itemReducer(state=initialState, action){
             const { id, data } = action.payload;
             return{
                 ...state,
+                // eslint-disable-next-line array-callback-return
                 items: state.items.map(item => {
                     if(item._id===id){
                         item = data;

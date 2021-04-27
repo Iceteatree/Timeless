@@ -1,3 +1,12 @@
 .store-class {
+    padding-top: 8rem;
     text-align: center;
+}
+
+.store-class h1{
+    padding-bottom: 2rem;
+}
+
+.item-card-body {
+    height:100%;
 }

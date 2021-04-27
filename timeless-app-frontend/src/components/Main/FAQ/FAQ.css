@@ -1,3 +1,26 @@
 .faq-class {
+    padding-top: 8rem;;
     text-align: center;
+}
+
+.btn-faq {
+    width:51%;
+    display:inline;
+    justify-content: space-around;
+}
+
+.card-faq{
+    margin: 1rem auto;
+    width:51%
+}
+
+.faq-bottom-image {
+    height: 80vh;
+    background-image: url(../../../img/ad.jpg);
+    background-size: cover;
+    width: 100vw;
+    background-position: center;
+    margin-top: 2rem;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
