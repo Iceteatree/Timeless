@@ -1,9 +1,11 @@
 .store-class {
     padding-top: 8rem;
+    padding-bottom: 8rem;
     text-align: center;
 }
 
 .store-class h1{
+    font-size: 4.5rem;
     padding-bottom: 2rem;
 }
 

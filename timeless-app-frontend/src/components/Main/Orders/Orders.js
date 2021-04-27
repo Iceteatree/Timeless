@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getOrders } from '../../../actions/orderActions';
 import {Card, CardBody, CardTitle, CardSubtitle, Alert, Container} from 'reactstrap';
+import './Order.css';
 
 class Orders extends Component {
 
@@ -28,7 +29,8 @@ class Orders extends Component {
             this.ongetOrders(user._id);
         }
         return(
-            <div>
+            <div className="order-div">
+                <h1>Previous Orders</h1>
                 {this.props.isAuthenticated ?
                     <>
                         {this.props.order.orders!==[] ? null :
@@ -39,20 +41,20 @@ class Orders extends Component {
                 }
 
                 {this.props.isAuthenticated && !this.props.order.loading && this.state.loaded && this.props.order.orders.length?
-                    <Container>
+                    <Container> 
                         <div className="row">
                             {this.props.order.orders.map((order)=>(
                                 <div className="col-md-12">
                                     <Card key="item._id">
                                         <CardBody>
-                                            <CardTitle tag="h4">{order.items.length} items - Total cost: Rs. {order.bill}</CardTitle>
+                                            <CardTitle tag="h4">{order.items.length} items - Total cost: R. {order.bill}</CardTitle>
                                             <div className="row">
                                             {order.items.map((item)=>(
                                                 <div className="col-md-4">
                                                     <Card className="mb-2">
                                                         <CardBody>
                                                             <CardTitle tag="h5">{item.name} ({item.quantity} pieces)</CardTitle>
-                                                            <CardSubtitle tag="h6">Rs. {item.price}/piece</CardSubtitle>
+                                                            <CardSubtitle tag="h6">R. {item.price}/piece</CardSubtitle>
                                                         </CardBody>
                                                     </Card>
                                                 </div>

@@ -5,6 +5,7 @@ import Logout from './Logout/Logout';
 import LoginModal from './Login/Login';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
 
 class Header extends Component {
@@ -31,6 +32,11 @@ class Header extends Component {
                     <strong>{ user ? `Welcome ${user.name}` : ''}</strong>
                 </span>
             </li>
+            <Link to="/cart">
+            <button type="button" className="btn btn-lg btn-dark">
+                <i class="bi bi-cart3"></i>
+            </button>
+            </Link>
             <li className="nav-item">
                 <Logout/>
             </li>

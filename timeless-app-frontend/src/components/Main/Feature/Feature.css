@@ -1,4 +1,38 @@
 .features-class {
     padding-top: 8rem;
+    padding-bottom: 8rem;
     text-align: center;
+    background-color: #dfd3d3;
+
+}
+
+.features-class h1{
+    display: inline-block;
+    font-size: 4.5rem;
+    width: 100vw;
+}
+
+.feature-card-container {
+    max-width:70%;
+    display: inline-flex;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.features-cards {
+    width: 32rem;
+    display: inline-flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: 2rem auto;
+    border-radius: 18px;
+}
+
+.features-cards-img {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    width: 450px;
+    margin: 2rem auto;
 }

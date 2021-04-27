@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCart, deleteFromCart } from '../../../actions/cartActions';
 import { checkout } from '../../../actions/orderActions';
 import Checkout from './Checkout';
+import './Cart.css'
 
 import {Card, CardText, CardBody, CardTitle, CardSubtitle, Button, Alert, Container} from 'reactstrap';
 
@@ -52,7 +53,7 @@ class Cart extends Component {
             
                 {this.props.isAuthenticated && !this.props.cart.loading && this.state.loaded && this.props.cart.cart?
                 <Container>
-                    <div className="row">
+                    <div className="cart-div row">
                         {this.props.cart.cart.items.map((item)=>(
                             <div className="col-md-4" key={item._id}>
                         <Card>

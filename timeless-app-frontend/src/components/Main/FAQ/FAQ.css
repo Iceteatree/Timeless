@@ -1,6 +1,11 @@
 .faq-class {
     padding-top: 8rem;;
     text-align: center;
+    background-color: #dfd3d3;
+}
+
+.faq-class h1{
+    font-size: 4.5rem;
 }
 
 .btn-faq {
