@@ -13,7 +13,7 @@ export const getItems = () => dispatch => {
             type: GET_ITEMS,
             payload: res.data
         }))
-        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
+        .catch(err => console.log(err));
 }
 
 //This function uses axios to make a post request to our items endpoint. If succesful we will get a response where we can send the results of the data to be payload and then set the type to Add_item
