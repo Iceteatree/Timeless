@@ -19,12 +19,12 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 // If production NODE_ENV becomes production then build the production build in this location then fetch everything from that build and send it as a response here.
-// if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, 'timeless-app-frontend/build')));
     app.get('*',(req,res) =>
       {res.sendFile(path.resolve(__dirname, 'timeless-app-frontend', 'build', 'index.html'));
   });
-// }
+}
 
 // Setting up our route paths to /api/ route.
 app.use('/api',authRoutes);

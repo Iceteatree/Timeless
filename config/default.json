@@ -1,0 +1,5 @@
+{
+    "dbURI": "mongodb+srv://alankow:rWdtBIZDzOH7dX1V@cluster0-education.qfhv1.mongodb.net/timelessDatabase",
+    "jwtsecret": "OJsUNfdpXuGZpkV7oXbIl6Uy0GND6u6CBqzzib0UWKOvxCYE75HQWof0u5kaGi4",
+    "StripeAPIKey": "sk_test_51IkHJdCSlyyb5ewg4EnS9nWSwA3P3zeoaidSATEDEsILOBqSMOwYeAPd1HTRSZUwVCYUQV4ZqwXndQ3A1CKoZiEb00dW5DvJcw"
+}
