@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css'
 
+// Creating a dynamic data copyright footer.
 function Footer() {
     const date = new Date();
     const year = date.getFullYear();

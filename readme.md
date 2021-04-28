@@ -36,6 +36,11 @@ https://timeless-watches-app.herokuapp.com/
 ### If you are an end-user
 * Simply click this [link](https://timeless-watches-app.herokuapp.com/) to open website.
 [![Website](https://i.postimg.cc/25hy0Qhh/Screenshot-from-2021-04-28-03-38-41.png)](https://postimg.cc/7CPq6TBZ)
+### If you want to play with the admin functions use these login details:
+```
+email: admin@gmail.com
+password: password
+```
 ### If you would like to play with the code
 * Open any of the files you would like to edit in the code editor of your choice. Example. Visual Studio Code.
 [![Visual Studio Code Example](https://i.postimg.cc/Y9tr8JpB/Screenshot-from-2021-04-28-03-39-01.png)](https://postimg.cc/wtbYj4yw)
@@ -127,9 +132,10 @@ The people who would use this application are people who enjoy shopping and in p
 
 
 # Credits
-## Tutorials
+### Tutorials
 * [Redux Crash Course with React - Brad Traversy](https://www.youtube.com/watch?v=93p3LxR9xfM)
-*[Complete React Tutorial(with Redux) - Net Ninja](https://youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+* [Complete React Tutorial(with Redux) - Net Ninja](https://youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+### Bootcamp
 * [HyperionDev](https://www.hyperiondev.com/)
 * If you would like to leave any feedback and suggestions please feel free to contact me.
 

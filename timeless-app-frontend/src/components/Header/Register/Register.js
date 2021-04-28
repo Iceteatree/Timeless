@@ -1,9 +1,13 @@
-import { Component } from 'react';
+// Importing React and other relevant modules.
+import React, { Component } from 'react';
+// Connect our React with our redux store.
 import { connect } from 'react-redux';
+// React built in Type checking 
 import PropTypes from 'prop-types';
+// Importing register and clear error actions.
 import { register } from '../../../actions/authActions';
 import { clearErrors } from '../../../actions/errorActions';
-
+// Using reactstrap for some bootstrap type styling. The other styling will be handled by the global cdn Bootstrap.
 import {
     Button,
     Modal,
@@ -17,6 +21,7 @@ import {
     Alert
 } from 'reactstrap';
 
+// This component handles our register functionality. We initialise the state with default values.
 class RegisterModal extends Component {
     state = {
         modal: false,
@@ -26,13 +31,14 @@ class RegisterModal extends Component {
         msg: null
     };
 
+    // Making sure our types are correct.
     static propTypes = {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
         register: PropTypes.func.isRequired,
         clearErrors: PropTypes.func.isRequired
     }
-
+   // Use our lifecycle function componentDidUpdate to take in the previous props as a parameter. We check if the current error object is equal to the previous error. If no, we check whether the error is from register fail and if yes we set the message as errors message else we set the message to null.
     componentDidUpdate(prevProps) {
         const { error, isAuthenticated } = this.props;
         if(error !== prevProps.error){
@@ -52,7 +58,7 @@ class RegisterModal extends Component {
             }
         }
     }
-
+    // Toggle method that triggers the clearErrors function from the error actions and then we set the state of the modal to the opposite of its current modal state.
     toggle = () => {
         // Clear errors
         this.props.clearErrors();
@@ -60,11 +66,12 @@ class RegisterModal extends Component {
             modal: !this.state.modal
         });
     }
-
+  // this method just updates the valuje of the email and the password as we type them in the form fields.
     onChange = (e) => {
         this.setState({[e.target.name]:e.target.value});
     }
 
+    // This method takes in the name, email and password from the state and then passes them to the register  action.
     onSubmit = (e) => {
         e.preventDefault();  
         
@@ -78,6 +85,8 @@ class RegisterModal extends Component {
 
 
     }
+        
+    // Render our component. Creates a form that takes in user input.
     render(){
         return(
             <div className="container">
@@ -133,65 +142,11 @@ class RegisterModal extends Component {
         );
     }
 }
-//     render(){
-//         return(
-//             <div className="container">
-//                 <btn className="btn btn-sm btn-light m-1 p-0"><div className="nav-link" onClick={this.toggle} href="#"><span className="text-dark">Register</span></div></btn>
-//                 <div className="modal"
-//                     isOpen={this.state.modal}
-//                     toggle={this.toggle}
-//                 >
-//                     <div className="modal-header" toggle={this.toggle}>
-//                         Register
-//                     </div>
-//                     <div className="modal-body">
-//                         {this.state.msg ? (<div className="alert alert-danger">{this.state.msg}</div>):null}
-//                         <form onSubmit={this.onSubmit}>
-//                             <div className="form-group">
-//                                 <label for="name">Name</label>
-//                                 <input
-//                                     type="text"
-//                                     name="name"
-//                                     id="name"
-//                                     placeholder="Name"
-//                                     className="mb-3"
-//                                     onChange={this.onChange}
-//                                 />
-//                                 <label for="email">Email</label>
-//                                 <input
-//                                     type="email"
-//                                     name="email"
-//                                     id="email"
-//                                     placeholder="Email"
-//                                     className="mb-3"
-//                                     onChange={this.onChange}
-//                                 />
-//                                 <label for="password">Password</label>
-//                                 <input
-//                                     type="password"
-//                                     name="password"
-//                                     id="password"
-//                                     placeholder="Password"
-//                                     className="mb-3"
-//                                     onChange={this.onChange}
-//                                 />
-//                                 <button
-//                                     className="btn btn-dark"
-//                                     style={{marginTop: '2rem'}}
-//                                     block
-//                                 >Register</button>
-//                             </div>
-//                         </form>
-//                     </div>
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
-
+// Define a mapStatetoProps and get the isAuthenticated and error from the state we set up in the reducer files. 
 const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
     error: state.error
 });
 
+// Connect the Register Modal to these state and action functions and then export it.
 export default connect(mapStateToProps,{register, clearErrors})(RegisterModal);

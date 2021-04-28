@@ -1,8 +1,13 @@
-import { Component } from 'react';
+// Importing React and other relevant modules.
+import React, { Component } from 'react';
+// Connects our React with our redux store.
 import { connect } from 'react-redux';
+// React built in Type checking 
 import PropTypes from 'prop-types';
+// Importing login and clear error actions.
 import { login } from '../../../actions/authActions';
 import { clearErrors } from '../../../actions/errorActions';
+// Using reactstrap for some bootstrap type styling. The other styling will be handled by the global cdn Bootstrap.
 import {
     Button,
     Modal,
@@ -16,6 +21,7 @@ import {
     Alert
 } from 'reactstrap';
 
+// This component handles our login functionality. We initialise the state with default values.
 class LoginModal extends Component {
     state = {
         modal: false,
@@ -24,13 +30,14 @@ class LoginModal extends Component {
         msg: null
     };
 
+    // Making sure our types are correct.
     static propTypes = {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
         login: PropTypes.func.isRequired,
         clearErrors: PropTypes.func.isRequired
     }
-
+    // Use our lifecycle function componentDidUpdate to take in the previous props as a parameter. We check if the current error object is equal to the previous error. If no, we check whether the error is from Login fail and if yes we set the message as errors message else we set the message to null.
     componentDidUpdate(prevProps) {
         const { error, isAuthenticated } = this.props;
         if(error !== prevProps.error){
@@ -43,7 +50,7 @@ class LoginModal extends Component {
             }
         }
 
-        // If authenticated, close modal
+        // If authenticated, close the modal
         if(this.state.modal){
             if(isAuthenticated){
                 this.toggle();
@@ -51,7 +58,7 @@ class LoginModal extends Component {
             }
         }
     }
-
+    // Toggle method that triggers the clearErrors function from the error actions and then we set the state of the modal to the opposite of its current modal state.
     toggle = () => {
         // Clear errors
         this.props.clearErrors();
@@ -60,20 +67,23 @@ class LoginModal extends Component {
         });
     }
 
+    // this method just updates the valuje of the email and the password as we type them in the form fields.
     onChange = (e) => {
         this.setState({[e.target.name]:e.target.value});
     }
 
+    // This method takes in the email and password from the state and then passes them to the login action.
     onSubmit = (e) => {
         e.preventDefault(); 
         
         const {email, password} = this.state;
         const user = {email, password};
 
-        // Attempt to login
+        // Attempt to login using login action
         this.props.login(user);
     }
     
+    // Render our component. Creates a form that takes in user input.
     render(){
         return(
             <div className="container">
@@ -119,98 +129,13 @@ class LoginModal extends Component {
         );
     }
 }
-//     render(){
-//         return(
-//             <div className="container">
-//                 <btn className="btn btn-sm btn-light m-1 p-0"><div className="nav-link" onClick={this.toggle} href="/"><span className="text-dark">Login</span></div></btn>
-//                 <div className="modal"
-//                     isOpen={this.state.modal}
-//                     toggle={this.toggle}
-//                 >
-//                     <div className="modal-header" toggle={this.toggle}>
-//                         Login
-//                     </div>
-//                     <div className="modal-body">
-//                         {this.state.msg ? (<div className="alert alert-danger">{this.state.msg}</div>):null}
-//                         <form onSubmit={this.onSubmit}>
-//                             <div className="form-group">
-//                                 <label for="email">Email</label>
-//                                 <input
-//                                     type="email"
-//                                     name="email"
-//                                     id="email"
-//                                     placeholder="Email"
-//                                     className="mb-3"
-//                                     onChange={this.onChange}
-//                                 />
-//                                 <label for="password">Password</label>
-//                                 <input
-//                                     type="password"
-//                                     name="password"
-//                                     id="password"
-//                                     placeholder="Password"
-//                                     className="mb-3"
-//                                     onChange={this.onChange}
-//                                 />
-//                                 <btn
-//                                     className="btn btn-dark"
-//                                     style={{marginTop: '2rem'}}
-//                                     block
-//                                 >Login</btn>
-//                             </div>
-//                         </form>
-//                     </div>
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
 
+// Define a mapStatetoProps and get the isAuthenticated and error from the state we set up in the reducer files. 
 const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
     error: state.error
 });
 
+// Connect the Login Modal to these state and action functions and then export it.
 export default connect(mapStateToProps,{login, clearErrors})(LoginModal);
-
-
-// import React, {useState, useEffect} from 'react';
-// import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
-// import { login } from '../../../actions/authActions';
-// import { clearErrors } from '../../../actions/errorActions';
-
-
-// function Login() {
-//     const [modal, setModal] = useState(false);
-//     const [email, setEmail] = useState("");
-//     const [password, setPassword] = useState ("");
-//     const [msg, setMsg] = useState(null);
-//     const [error, setError] = useState("");
-//     const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-//     useEffect((prevProps) => {
-//         if(error !== prevProps.error){
-//             if(error.id === 'LOGIN_FAIL'){
-//                 setMsg(error.msg)
-//             } else {
-//                 setMsg(null)
-//             }
-//         }
-//         if (modal) {
-//             if(isAuthenticated){
-//                 setModal(!modal)
-//             }
-//         }
-//     }, [])
-
-    
-//     return (
-//         <div>
-            
-//         </div>
-//     )
-// }
-
-// export default Login
 
