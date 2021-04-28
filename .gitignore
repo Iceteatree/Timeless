@@ -7,7 +7,7 @@ node_modules/
 .pnp.js
 
 #Config files
-# /config
+/config
 
 # testing
 /coverage
