@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 require('dotenv').config()
 
 let app = express();
-// const uri = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB_CLUSTER}/timelessDatabase`
-const dbURI = config.get('dbURI'); //This does the same as above but with less process.env
+const dbURI = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB_CLUSTER}/timelessDatabase`
+// const dbURI = config.get('dbURI'); //This does the same as above but with less process.env
 
 // Initialising our routes
 const authRoutes = require('./routes/auth');
