@@ -16,7 +16,7 @@ class Store extends Component {
         // getItems: PropTypes.func.isRequired,
         // item: PropTypes.object.isRequired,
         isAuthenticated: PropTypes.bool,
-        addToCart: PropTypes.func,
+        // addToCart: PropTypes.func,
         user: PropTypes.object.isRequired
     }
 
