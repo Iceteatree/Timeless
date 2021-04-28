@@ -3,12 +3,60 @@
 
 Project Timeless is a product page design that involves the advertising and selling of an up and coming signature watch brand.  It will feature seamless UI/UX content and contain all the logic needed for admin/user privileges as well as online-store functionality.
 
+# Site
+Deployed to Heroku here
+https://timeless-watches-app.herokuapp.com/
+
+# Installation
+
+* Fork a copy
+* Clone a copy using git. ``git clone https://github.com/Iceteatree/Timeless.git``
+  * Example in terminal type *https://github.com/Iceteatree/Timeless.git*
+  * Rename the local repository's current 'origin' to 'upstream'.
+    *"git remote rename origin upstream"*
+  * Give the local repository an 'origin' that points to your repository.
+    *"git remote add origin https://github.com/your-account/your-repository.git"*
+  * Push the local repository to your repository on github.
+    *"git push origin master"*
+
+* Alternatively under 'Code' click 'Download as Zip'
+* Alternatively click [here]https://github.com/Iceteatree/Timeless/archive/refs/heads/main.zip
+
+
+# Usage
+
+* ``cd`` into main folder.
+* Make sure you have latest NPM components installed by typing ``npm install`` in terminal
+* To run type ``npm start`` in terminal.
+* Open another terminal
+* ``cd`` into frontend folder.
+* Make sure you have latest NPM components installed by typing ``npm install`` in terminal
+* To run type ``npm start`` in terminal.
+
+### If you are an end-user
+* Simply click this [link](https://timeless-watches-app.herokuapp.com/) to open website.
+[![Website](https://i.postimg.cc/25hy0Qhh/Screenshot-from-2021-04-28-03-38-41.png)](https://postimg.cc/7CPq6TBZ)
+### If you would like to play with the code
+* Open any of the files you would like to edit in the code editor of your choice. Example. Visual Studio Code.
+[![Visual Studio Code Example](https://i.postimg.cc/Y9tr8JpB/Screenshot-from-2021-04-28-03-39-01.png)](https://postimg.cc/wtbYj4yw)
+
+# Testing
+* If you would like to run the test modules do the following:
+  * ``cd`` into main folder
+  * Type ``npm test`` into console to run server tests.
+
+  * ``cd`` into frontend folder
+  * Type ``npm test`` into console to run frontend tests.
+
+# Third part APIS?
+There is only one 3rd part API that we are using.
+The app uses the ``Stripe`` payment API.
+
 # Software requirements documentation
 
 This document will be split into two main sections.
 1) **System Architecture**
 2) **System Requirements Specification**
-
 
 ## System Architecture
 
@@ -16,7 +64,7 @@ This document will be split into two main sections.
 Those chosen web stack that we will be using to design this web application is the **MERN** stack.
 
 ### Motivation
-The reason why I've chosen to use the **MERN** stack is because it is an unopinionated stack that allows total freedom in how the developer gets to work to get to the final product. I am really excited to use **React** and in particular Create-React-App for the frontend because I can see the benefits it provides and because I'm the most comfortable with it so far, therefore I am able to push my own abilities farther than they already are. I am using **Express** and **Node js** to power the backend and am connecting that to a **Mongo database**. With these in place I can reliably assume that my application will always have 100% run time and can easily scale in the future if I need it to.
+The reason why I've chosen to use the **MERN** stack is because it is an unopinionated stack that allows total freedom in how the developer gets to work to get to the final product. I am really excited to use **React** and in particular Create-React-App for the frontend because I can see the benefits it provides and because I'm the most comfortable with it so far, therefore I am able to push my own abilities farther than they already are. I will be using **Redux** for my state management. I am using **Express** and **Node js** to power the backend and am connecting that to a **Mongo** database. With these in place I can reliably assume that my application will always have 100% run time and can easily scale in the future if I need it to.
 
 ### Deployment
 The site will be deployed to **Heroku**. They not only have multiple servers around the world ensuring reliability but also all the server side logic can be handled by them allowing me the developer to concentrate more on the controller logic.
@@ -78,17 +126,11 @@ The people who would use this application are people who enjoy shopping and in p
 - A point system that allows the user to exchange for coupons and the like.(To be implemented in the future...possibly...maybe.)
 
 
-### How to use
-
-### Installation instructions
-
-### Security measures
-
-### Third part APIS?
-
-### Where and how the application has been deployed
-
-### Link to App
-
+# Credits
+## Tutorials
+* [Redux Crash Course with React - Brad Traversy](https://www.youtube.com/watch?v=93p3LxR9xfM)
+*[Complete React Tutorial(with Redux) - Net Ninja](https://youtube.com/playlist?list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG)
+* [HyperionDev](https://www.hyperiondev.com/)
+* If you would like to leave any feedback and suggestions please feel free to contact me.
 
 ##### Alan Kow | Copyright 2021 |
