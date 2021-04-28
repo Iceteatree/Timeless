@@ -17,7 +17,7 @@ class Store extends Component {
         // item: PropTypes.object.isRequired,
         isAuthenticated: PropTypes.bool,
         // addToCart: PropTypes.func,
-        user: PropTypes.object.isRequired
+        user: PropTypes.object
     }
 
     onAddToCart = async (id, productId) => {
@@ -26,7 +26,7 @@ class Store extends Component {
     }
 
     render(){
-        const  items  = this.props.item;
+        const { items } = this.props.item;
         const user = this.props.user;
         return (
             <div className='store-class' id='store-id'>
