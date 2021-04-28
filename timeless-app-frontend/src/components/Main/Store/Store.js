@@ -13,10 +13,10 @@ class Store extends Component {
     }
 
     static propTypes = {
-        getItems: PropTypes.func.isRequired,
-        item: PropTypes.object.isRequired,
+        // getItems: PropTypes.func.isRequired,
+        // item: PropTypes.object.isRequired,
         isAuthenticated: PropTypes.bool,
-        addToCart: PropTypes.func.isRequired,
+        addToCart: PropTypes.func,
         user: PropTypes.object.isRequired
     }
 
