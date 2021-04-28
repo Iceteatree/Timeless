@@ -26,7 +26,7 @@ class Store extends Component {
     }
 
     render(){
-        const { items } = this.props.item;
+        const  items  = this.props.item;
         const user = this.props.user;
         return (
             <div className='store-class' id='store-id'>
