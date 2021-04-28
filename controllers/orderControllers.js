@@ -3,8 +3,12 @@ const Order = require('../models/Order');
 const Cart = require('../models/Cart');
 const User = require('../models/User');
 const config = require('config');
+require('dotenv').config()
 // For this example we are using Stripe which does not have a South African base as of todays date. This means that all payments will be stored overseas and the ammounts can't be accessed without a UK bank account. However this is perfectly fine for us as this is a fake website for demonstration purposes only.
-const stripe = require('stripe')(config.get('StripeAPIKey'));
+// const stripe = require('stripe')(config.get('StripeAPIKey'));
+// const stripe = require('stripe')(process.env.STRIPE_APIKEY);
+const Stripe = require('stripe');
+const stripe = Stripe(process.env.STRIPE_APIKEY);
 
 // This function fetches all the orders based on the user id which is taken from the request params. We then sort them in a descending order by the date ordered and then return them as a response.
 module.exports.get_orders = async (req,res) => {

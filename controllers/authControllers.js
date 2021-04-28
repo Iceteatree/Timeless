@@ -3,7 +3,9 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const bcrypt = require('bcrypt');
+require('dotenv').config()
 
+const JWTSECRET = process.env.JWTSECRET;
 // This function handles our registration and jwt token creation 
 // We deconstruct the name, email and password from the request body that is being passed over from the API request on the frontend.
 module.exports.signup = (req,res) => {
@@ -34,7 +36,8 @@ module.exports.signup = (req,res) => {
                 .then(user => {
                     jwt.sign(
                         {id:user._id},
-                        config.get('jwtsecret'),
+                        // config.get('jwtsecret'),
+                        JWTSECRET,
                         {expiresIn: 3600},
                         (error, token) => {
                             if (error) throw error;
@@ -75,7 +78,8 @@ module.exports.login = async (req, res) => {
                     // We then create a signed JWT token the same was as the registered token above. We then return the token along with the details of the user without the password as a response back to the frontend.
                     jwt.sign(
                         {id: user._id},
-                        config.get('jwtsecret'),
+                        // config.get('jwtsecret'),
+                        JWTSECRET,
                         {expiresIn: 3600},
                         (error, token) => {
                             if (error) throw error;
