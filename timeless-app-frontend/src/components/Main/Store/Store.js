@@ -26,7 +26,7 @@ class Store extends Component {
     }
 
     render(){
-        const { items } = Array.from(this.props.item);
+        const  items  = Array.from(this.props.item);
         // const items2 = Array.from(items)
         // console.log(items2)
         const user = this.props.user;
