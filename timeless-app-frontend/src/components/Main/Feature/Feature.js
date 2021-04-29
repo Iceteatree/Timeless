@@ -1,7 +1,10 @@
+// Initialising React
 import React from 'react'
+// Import Styling components and stylesheet
 import { Card, CardTitle, CardText, CardImg, CardBody } from 'reactstrap';
 import './Feature.css'
 
+// Simple stateless functional component that basically renders a nice feature page.
 function Feature() {
     return (
 
@@ -44,11 +47,8 @@ function Feature() {
       <Card className="features-cards-img img-fluid">
       <CardImg src="./img/men-watch.jpg" alt="Card image cap" />
       </Card>
-      {/* <Card className="features-cards-img">
-      <CardImg src="./img/mens-watch-2.jpg" alt="Card image cap" />
-      </Card> */}
       
-      
+
     </div>
   );
 };

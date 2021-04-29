@@ -1,9 +1,15 @@
+// Import React and Component module
 import React, { Component } from 'react';
+// Importing reactstrap components.
 import { Button, Form, FormGroup, Label, Input, Container, Alert } from 'reactstrap';
+// Connect module used to connect React with redux store.
 import { connect } from 'react-redux';
+// Get the addItem action
 import { addItem } from '../../../actions/itemActions';
+// React module Proptypes for type checking.
 import PropTypes from 'prop-types';
 
+// Create an AddItem component that will add items to our database. Initialising state with these empty variables.
 class AddItem extends Component {
     state = {
         title: '',
@@ -13,14 +19,17 @@ class AddItem extends Component {
         img_url: ''
     }
 
+    // Setting type for isAuthenticated.
     static propTypes = {
         isAuthenticated: PropTypes.bool
     }
 
+    // this method changes the state of the name to equal the value of the user input.
     onChange = (e) => {
         this.setState({[e.target.name]:e.target.value});
     }
 
+    // This method triggers on submit. It changes the default state of the initial variables to the newItem variables using the addItem action from the itemActions.
     onSubmit = async (e) => {
         e.preventDefault();
 
@@ -36,7 +45,7 @@ class AddItem extends Component {
 
         alert('Item added successfully');
     }
-
+// Render our component. Basically just a form for some user inputs.
     render(){
         return(
             <div>
@@ -106,10 +115,11 @@ class AddItem extends Component {
         )
     }
 }
-
+// define mapStatetoProps so that we can set our item and isAuthenticated.
 const mapStateToProps = (state) => ({
     item: state.item,
     isAuthenticated: state.auth.isAuthenticated,
 });
 
+// Connect our mapStatetoProps and link it with the AddItem component.
 export default connect(mapStateToProps,{addItem})(AddItem);

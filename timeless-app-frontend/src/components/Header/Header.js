@@ -1,30 +1,40 @@
+// Import React module
 import React, {Component} from 'react';
+// import our local styling
 import './Header.css';
+// Importing these 3 components so we can use them in our Navbar
 import RegisterModal from './Register/Register';
 import Logout from './Logout/Logout';
 import LoginModal from './Login/Login';
+// connect our react to redux store with connect
 import { connect } from 'react-redux';
+// Import Prop types so we can define the types
 import PropTypes from 'prop-types';
+// Import Link so we can route our frontend.
 import { Link } from 'react-router-dom'
 
 
+// Create a component holds our Navbar items and setting the initial state.
 class Header extends Component {
   state = {
       isOpen: false
   }
-
+// Setting our type for auth.
   static propTypes = {
       auth: PropTypes.object.isRequired
   }
-
+// toggle method just changes the state of isOpen to the opposite of isOpen essentially 'toggling' the state.
   toggle = () => {
       this.setState({
           isOpen: !this.state.isOpen
       });
   }
+
+//   Render our component. We set our isAuthenticated and ser from our auth actions via props. 
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
+    // This is basically what we want to display when a person has logged in.
     const authLinks = (
         <>
             <li className="nav-item mt-3">
@@ -42,7 +52,7 @@ class Header extends Component {
             </li>
         </>
     );
-
+// This is what we want to display when there are no people logged in or authenticated.
     const guestLinks = (
         <>
             <li className="nav-item">
@@ -53,7 +63,7 @@ class Header extends Component {
             </li>
         </>
     );
-
+// Building our Navbar
     return(
         <div className="header-class">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark" expand="sm" >
@@ -73,6 +83,7 @@ class Header extends Component {
                           <li><a href="#review-id" className="nav-link">Reviews</a></li>              
                         </ul>
                     </div>
+                    {/* This part defines what we show. If authenticatedis true then we display authlinks if it is false then we display guestlinks */}
                     <ul className="navbar-nav">
                         { isAuthenticated ? authLinks: guestLinks} 
                         </ul>
@@ -82,7 +93,7 @@ class Header extends Component {
     );
 }
 }
-
+// We define the mapStateToProps and add the auth state in there. We then connect it to the Navbar class
 const mapStateToProps = state => ({
     auth: state.auth
 })

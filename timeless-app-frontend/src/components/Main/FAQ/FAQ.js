@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 import { Collapse, Button, CardBody, Card } from 'reactstrap';
 import './FAQ.css'
 
+
+// Simple stateless functional component that basically renders a nice FAQ page.
 function FAQ() {
+    // Brain was tired so I just used the useState hook to create some state functionality. Yes it's ugly I know.
     const [isOpen1, setIsOpen1] = useState(false);
     const [isOpen2, setIsOpen2] = useState(false);
     const [isOpen3, setIsOpen3] = useState(false);
     const [isOpen4, setIsOpen4] = useState(false);
     const [isOpen5, setIsOpen5] = useState(false);
 
+    // Toggle functions that toggle the state true and false.
     const toggle1 = () => setIsOpen1(!isOpen1);
     const toggle2 = () => setIsOpen2(!isOpen2);
     const toggle3 = () => setIsOpen3(!isOpen3);

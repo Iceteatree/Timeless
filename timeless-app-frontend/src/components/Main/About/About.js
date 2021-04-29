@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 
+// Just a simple stateless functional component that displays our about item.
 function About() {
     return (
         <div className='about-class container-fluid' id="about-id">
