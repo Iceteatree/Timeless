@@ -27,13 +27,15 @@ class Store extends Component {
 
     render(){
         const { items } = this.props.item;
+        const items2 = Array.from(items)
+        console.log(items2)
         const user = this.props.user;
         return (
             <div className='store-class' id='store-id'>
             <h1>Store</h1>
             <Container>
                 <div className="row">
-                {items.map((item)=>(
+                {items2.map((item)=>(
                     <div className="col-md-4" key={item._id}>
                     <Card className="item-card-body mb-4">
                     <CardImg top width="100%" src={item.img_url} alt="watch image"/>
