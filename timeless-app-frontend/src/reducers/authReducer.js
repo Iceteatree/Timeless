@@ -15,7 +15,8 @@ const initialState = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
     isLoading: false,
-    user: null
+    user: {}
+    // usertype: "user"
 }
 
 // Create a function  that checks each action type and makes changes if applicable
@@ -34,7 +35,7 @@ export default function authReducer(state=initialState, action){
                 ...state,
                 isAuthenticated: true,
                 isLoading: false,
-                user: action.payload
+                user: action.payload,
             }
         // In these cases we should set the token we received to the token received in local storage. We then set then set the isAuthenticated to true and the isLoading to false.
         case LOGIN_SUCCESS:
@@ -55,7 +56,7 @@ export default function authReducer(state=initialState, action){
             return{
                 ...state,
                 token: null,
-                user: null,
+                user: {},
                 isAuthenticated: false,
                 isLoading: false
             };

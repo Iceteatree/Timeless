@@ -25,7 +25,7 @@ class Cart extends Component {
     static propTypes = {
         getCart: PropTypes.func.isRequired,
         isAuthenticated: PropTypes.bool,
-        addToCart: PropTypes.func.isRequired,
+        addToCart: PropTypes.func,
         deleteFromCart: PropTypes.func.isRequired,
         user: PropTypes.object.isRequired,
         cart: PropTypes.object.isRequired,

@@ -9,7 +9,7 @@ import store from './store';
 // Importing the loadUser redux action
 import {loadUser} from './actions/authActions';
 // Importing routing modules.
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 // Importing all the relevant components here
 import Footer from './components/Footer/Footer';
@@ -38,7 +38,6 @@ class App extends Component{
       
         <Header />
         <Route path='/cart' exact component={Cart} />
-        
         <Route path='/' exact component={Landing} />
         <Route path='/' exact component={About} />
         <Route path='/' exact component={Feature} />
@@ -46,13 +45,7 @@ class App extends Component{
         <Route path='/' exact component={FAQ} />
         <Route path='/' exact component={Reviews} />
         <Route path='/orders' exact component={Orders} />
-          {/* <Landing />
-          <About />
-          <Feature />
-          <Store />
-          <FAQ />
-          <Reviews />
-          <Admin /> */}
+        <Route path='/admin' exact component={Admin} />
         <Footer />
         
       </div>

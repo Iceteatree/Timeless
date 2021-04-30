@@ -2,12 +2,14 @@
 import React, { Component } from 'react';
 // Importing reactstrap components.
 import { Button, Form, FormGroup, Label, Input, Container, Alert } from 'reactstrap';
+import './Admin.css'
 // Connect module used to connect React with redux store.
 import { connect } from 'react-redux';
 // Get the addItem action
 import { addItem } from '../../../actions/itemActions';
 // React module Proptypes for type checking.
 import PropTypes from 'prop-types';
+import GetItem from './GetItem';
 
 // Create an AddItem component that will add items to our database. Initialising state with these empty variables.
 class AddItem extends Component {
@@ -48,7 +50,8 @@ class AddItem extends Component {
 // Render our component. Basically just a form for some user inputs.
     render(){
         return(
-            <div>
+            <div className="admin-body">
+            <GetItem />
                 <Container>
                     <h2 className="text-center mb-3">Add a new Item</h2>
                     { this.props.isAuthenticated ?
