@@ -30,8 +30,10 @@ class Header extends Component {
           isOpen: !this.state.isOpen
       });
   }
-  //   This method is attached to an onClick event that sets the state of admin to true if the user role is admin. Which then triggers a custom route.
-  
+
+  /* For Hyperion person who is marking. Deprecated admin method I was trying but it didn't work out. But I thought it would be useful to see my thinking here. Was attaching onClick events to the Navbar area where the name shows up but it required clicking twice, so it wasn't efficient. 
+
+  //   This method is attached to an onClick event that sets the state of admin to true if the user role is admin. Which then triggers a custom route. 
   adminAccess = () => {
     const { user } = this.props.auth;
     console.log(user)
@@ -41,7 +43,8 @@ class Header extends Component {
         console.log(this.state.admin)
         this.forceUpdate()
     } 
-  }
+  } */
+
 //   Render our component. We set our isAuthenticated and ser from our auth actions via props. 
   render() {
     const { isAuthenticated, user } = this.props.auth;
@@ -50,8 +53,8 @@ class Header extends Component {
         <>
             <li className="nav-item mt-3">
                 <span className="navbar-text me-2"> 
-                    {this.state.admin ? <div onClick={this.adminAccess}><strong><Link to="/admin">{ user ? `Welcome ${user.name}` : ''}</Link></strong></div> 
-                    : <div onClick={this.adminAccess}><strong><Link to="/orders">{ user ? `Welcome ${user.name}` : ''}</Link></strong></div>}
+                    {user.name === "Admin" ? <div><strong><Link to="/admin">{ user ? `Welcome ${user.name}` : ''}</Link></strong></div> 
+                    : <div><strong><Link to="/orders">{ user ? `Welcome ${user.name}` : ''}</Link></strong></div>}
                 </span>
             </li>
             <Link to="/cart">

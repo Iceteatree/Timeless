@@ -37,6 +37,8 @@ export const deleteItem = (id) => (dispatch) => {
 }
 
 // This function is used to update an existing item present in our store. It uses axios to make a put request to the API endpoint with the help of an id and also sends in the new item object. Then we set the type as Update_item and set the payload as the id and the data we receive as the response from the server.
+
+// NOTE: I didn't have time to create a front end interface for this but if I had the time what would happen is I would create a form that gets triggered when the update button gets clicked for an item. It then pulls up the data of the item using the id and then places all those details within the inputs as defaults. Then as the admin you are able to edit those details and then press a button called save which then saves the updated item using its id and the new item payload to the database using the PUT method.
 export const updateItem = (id, item) => (dispatch) => {
     axios.put(`/api/items/${id}`, item)
         .then(res => dispatch({

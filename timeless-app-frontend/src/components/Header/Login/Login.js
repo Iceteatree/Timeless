@@ -81,6 +81,7 @@ class LoginModal extends Component {
 
         // Attempt to login using login action
         this.props.login(user);
+        this.forceUpdate();
     }
     
     // Render our component. Creates a form that takes in user input.
