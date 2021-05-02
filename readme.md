@@ -25,11 +25,11 @@ https://timeless-watches-app.herokuapp.com/
 
 # Usage
 
-* ``cd`` into main folder.
+* ``cd`` into main timeless folder.
 * Make sure you have latest NPM components installed by typing ``npm install`` in terminal
 * To run type ``npm start`` in terminal.
 * Open another terminal
-* ``cd`` into frontend folder.
+* ``cd`` into timeless frontend folder.
 * Make sure you have latest NPM components installed by typing ``npm install`` in terminal
 * To run type ``npm start`` in terminal.
 
