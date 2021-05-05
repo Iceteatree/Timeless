@@ -5,9 +5,9 @@ Project Timeless is a product page design that involves the advertising and sell
 
 # Site
 **Deployed to Heroku here
-~~ https://timeless-watches-app.herokuapp.com/ ~~
+~~https://timeless-watches-app.herokuapp.com/~~
 NB. DO NOT CLICK SITE. DOWN FOR MAINTENANCE. TRYING TO FIX HEROKU DEPLOYMENT ISSUES.
-PLEASE OPEN UP A LOCAL VERSION ON YOUR PC TO SEE APPLICATION. 
+PLEASE OPEN UP A LOCAL VERSION ON YOUR PC TO SEE APPLICATION.
 
 **If you're having trouble viewing the page please watch this video to see the
 full functioning site in action.
