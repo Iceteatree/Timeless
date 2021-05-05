@@ -6,7 +6,7 @@ import {
   BrowserRouter as Router,
 } from 'react-router-dom'
 
-import App from './App';
+import App from '../src/App';
 
 // A normal snapshot test on our App component which holds all our other components.
 
